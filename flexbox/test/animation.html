@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Reset margins to prevent scrollbars during full-screen animation */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000; /* Dark background matches video borders */
+        }
+
+        #box {
+            /* Smoothly animates size and background color */
+            animation-name: example;
+            animation-duration: 5s; /* Adjusted duration for a smoother full-screen transition */
+            animation-iteration-count: infinite;
+            animation-direction:normal;
+            
+            position: absolute;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Target the video to perfectly match and scale with the box */
+        #box video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Ensures video scales perfectly without distorting */
+        }
+
+        @keyframes example {
+            0% {
+                background-color: rgb(227, 147, 147);
+                width: 100px;
+                height: 100px;
+            }
+            100% {
+                background-color: rgb(246, 246, 254);
+                width: 100vw;  /* Full viewport width */
+                height: 100vh; /* Full viewport height */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <video  autoplay muted loop>
+            <source src="9b80b91bbc7d70a4ae6b751247553fe1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</body>
+</html>

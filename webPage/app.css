@@ -1,0 +1,29 @@
+.reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .review-card {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        @media (max-width: 468px) {
+            .review-card {
+                
+                background-color: #fa7777;
+            }
+        }
+        @media (max-width: 480px) {
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    
+        .review-heading {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }

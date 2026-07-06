@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Reset margins and lock screen */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        /* Centered absolute container */
+        #box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* --- VIDEO ANIMATION --- */
+        #box video {
+            object-fit: contain; 
+            animation: scaleVideo 4s forwards; /* Runs once and stays at 100% */
+        }
+
+        @keyframes scaleVideo {
+            0% {
+                width: 100px;
+                height: 100px;
+                background-color: rgb(227, 147, 147);
+            }
+            100% {
+                width: 100vw; 
+                height: 100vh; 
+                background-color: rgb(246, 246, 254);
+            }
+        }
+
+        /* --- PHOTO ANIMATION --- */
+        #box .photo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the photo fully covers the viewport */
+            
+            opacity: 0;
+            transform: scale(0.2); /* Starts small in the middle */
+            
+            /* Delays the photo animation until the 5s video finish */
+            animation: zoomPhoto 3s forwards;
+            animation-delay: 5s; 
+        }
+
+        @keyframes zoomPhoto {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            20% {
+                opacity: 1; /* Quick fade in */
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1); /* Zooms up to fully cover the page */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <video autoplay muted>
+            <source src="9b80b91bbc7d70a4ae6b751247553fe1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <img class="photo" src="download (13).jpg" alt="Zooming Photo">
+    </div>
+</body>
+</html>

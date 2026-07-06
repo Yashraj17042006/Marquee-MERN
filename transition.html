@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+        width : 100px;
+        height: 100px;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        line-height: 100px;
+        background-color: rgb(130, 130, 228);
+        transition-property: background-color;
+        transition-duration: 0.5s;
+        transition-delay: 0s;
+        transition: all 0.5s ease-in-out;
+        }
+        #box:hover{
+        background-color: #ff0000;
+        }
+        #animateButton{
+            width: 50px;
+            color:white;
+            background-color: rgb(130, 130, 228);
+            border: none;
+            border-radius: 20px;
+            transition-property: background-color;
+            transition-duration: 0.5s;
+            transition-timing-function: ease-in-out;
+        }
+        #animateButton:hover{
+            background-color: rgb(39, 39, 226);
+            scale: 1.1;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">Yashraj</div>
+    <button id="animateButton">BYE</button>
+</body>
+</html>

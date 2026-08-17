@@ -7,6 +7,10 @@ function greeting() {
         morning();
     };
 }
+function add(a,b){
+    return a+b;
+}
+console.log(add(5,5));
 
 const greet = greeting();
 greet();
